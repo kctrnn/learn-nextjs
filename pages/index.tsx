@@ -8,15 +8,6 @@ import styles from '../styles/Home.module.css';
 const Home: NextPage = () => {
   const router = useRouter();
 
-  const handleClick = () => {
-    router.push({
-      pathname: '/posts/[postId]',
-      query: {
-        postId: 123,
-      },
-    });
-  };
-
   return (
     <div className={styles.container}>
       <Head>
@@ -34,11 +25,9 @@ const Home: NextPage = () => {
           Get started by editing <code className={styles.code}>pages/index.tsx</code>
         </p>
 
-        <Link href="/about">
-          <a>Go to about page</a>
+        <Link href="/posts">
+          <a>Go to post list page</a>
         </Link>
-
-        <button onClick={handleClick}>Go to detail page</button>
       </main>
 
       <footer className={styles.footer}>
