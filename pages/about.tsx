@@ -1,5 +1,6 @@
 import { Header } from '@/components/common';
-import { useEffect, useState } from 'react';
+import { MainLayout } from '@/components/layout';
+import { ReactElement, useEffect, useState } from 'react';
 // import dynamic from 'next/dynamic';
 
 // const Header = dynamic(() => import('@/components/common').then((x) => x.Header), { ssr: false });
@@ -33,3 +34,7 @@ function AboutPage() {
 }
 
 export default AboutPage;
+
+AboutPage.getLayout = function getLayout(page: ReactElement) {
+  return <MainLayout>{page}</MainLayout>;
+};

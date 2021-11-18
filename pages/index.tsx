@@ -1,11 +1,14 @@
+import { AdminLayout } from '@/components/layout';
+import { NextPageWithLayout } from '@/models/common';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { ReactElement } from 'react';
 import styles from '../styles/Home.module.css';
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = () => {
   const router = useRouter();
 
   return (
@@ -47,3 +50,7 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+Home.getLayout = function getLayout(page: ReactElement) {
+  return <AdminLayout>{page}</AdminLayout>;
+};

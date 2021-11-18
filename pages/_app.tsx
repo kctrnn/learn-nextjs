@@ -1,8 +1,12 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import { AppPropsWithLayout } from '@/models/common';
+import '../styles/globals.css';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+  // https://nextjs.org/docs/basic-features/layouts#with-typescript
+
+  const getLayout = Component.getLayout ?? ((page) => page);
+
+  return getLayout(<Component {...pageProps} />);
 }
 
-export default MyApp
+export default MyApp;
