@@ -51,3 +51,11 @@ We'll try to build app and avoid using `SSR` as much as we can:
 - Private pages: **SSG** + **CSR**
 
 > https://github.com/vercel/next.js/discussions/10437#discussioncomment-90459
+
+## Auth flow
+
+![flow-1](https://maxschmitt.me/posts/next-js-http-only-cookie-auth-tokens/api-proxy-setting-http-only-cookies-after-login@2x.png)
+
+![flow-2](https://maxschmitt.me/posts/next-js-http-only-cookie-auth-tokens/api-proxy-and-http-only-cookies@2x.png)
+
+> https://maxschmitt.me/posts/next-js-http-only-cookie-auth-tokens/
