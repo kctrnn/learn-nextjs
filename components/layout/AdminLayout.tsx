@@ -1,9 +1,9 @@
 import { LayoutProps } from '@/models/common';
-import { Footer, Header } from '../common';
+import { Auth, Footer, Header } from '../common';
 
 export function AdminLayout({ children }: LayoutProps) {
   return (
-    <>
+    <Auth>
       <Header />
 
       <div>Sidebar</div>
@@ -11,6 +11,6 @@ export function AdminLayout({ children }: LayoutProps) {
       <main>{children}</main>
 
       <Footer />
-    </>
+    </Auth>
   );
 }

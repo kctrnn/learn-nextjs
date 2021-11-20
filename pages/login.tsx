@@ -1,7 +1,9 @@
 import { useAuth } from '@/hooks/index';
 import { LoginPayload } from '@/models/index';
+import { useRouter } from 'next/router';
 
 function LoginPage() {
+  const router = useRouter();
   const { login, logout, profile } = useAuth({
     revalidateOnMount: false,
   });
@@ -16,6 +18,7 @@ function LoginPage() {
     try {
       await login(payload);
       console.log('redirect to dashboard');
+      router.push('/');
     } catch (error) {
       console.log('Failed to login', error);
     }

@@ -1,4 +1,5 @@
 import { AdminLayout } from '@/components/layout';
+import { useAuth } from '@/hooks/use-auth';
 import { NextPageWithLayout } from '@/models/common';
 import type { NextPage } from 'next';
 import Head from 'next/head';
@@ -10,6 +11,16 @@ import styles from '../styles/Home.module.css';
 
 const Home: NextPageWithLayout = () => {
   const router = useRouter();
+  const { logout, profile } = useAuth();
+
+  const handleLogoutClick = async () => {
+    try {
+      await logout();
+      console.log('redirect to home');
+    } catch (error) {
+      console.log('Failed to logout', error);
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -27,6 +38,10 @@ const Home: NextPageWithLayout = () => {
         <p className={styles.description}>
           Get started by editing <code className={styles.code}>pages/index.tsx</code>
         </p>
+
+        <button onClick={handleLogoutClick}>Logout</button>
+
+        <p>{JSON.stringify(profile)}</p>
 
         <Link href="/posts">
           <a>Go to post list page</a>
