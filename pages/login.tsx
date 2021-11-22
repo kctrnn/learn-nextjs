@@ -1,5 +1,7 @@
 import { useAuth } from '@/hooks/index';
 import { LoginPayload } from '@/models/index';
+import { Typography } from '@mui/material';
+import { Box } from '@mui/system';
 import { useRouter } from 'next/router';
 
 function LoginPage() {
@@ -39,15 +41,17 @@ function LoginPage() {
   // };
 
   return (
-    <div>
-      <h1>Login Page</h1>
+    <Box>
+      <Typography component="h1" variant="h5" color="primary.main">
+        Login Page
+      </Typography>
 
       <button onClick={handleLoginClick}>Login</button>
       {/* <button onClick={handleGetProfileClick}>Get profile</button> */}
       <button onClick={handleLogoutClick}>Logout</button>
 
       <p>Profile: {JSON.stringify(profile || {}, null, 4)}</p>
-    </div>
+    </Box>
   );
 }
 
