@@ -1,10 +1,15 @@
+import { HeroSection } from '@/components/home';
 import { MainLayout } from '@/components/layout';
 import { NextPageWithLayout } from '@/models/common';
 import { Box } from '@mui/system';
 import { ReactElement } from 'react';
 
 const Home: NextPageWithLayout = () => {
-  return <Box>Home page</Box>;
+  return (
+    <Box>
+      <HeroSection />
+    </Box>
+  );
 };
 
 Home.getLayout = function getLayout(page: ReactElement) {

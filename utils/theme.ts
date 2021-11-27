@@ -9,9 +9,24 @@ export const theme = createTheme({
     },
     secondary: {
       main: '#00A8CC',
+      light: '#EDF7FA',
     },
     error: {
       main: red.A400,
+    },
+  },
+
+  typography: {
+    allVariants: {
+      color: '#21243D',
+      fontFamily: 'Heebo, sans-serif',
+    },
+
+    h3: {
+      fontSize: '2rem',
+      '@media (min-width: 900px)': {
+        fontSize: '2.75rem',
+      },
     },
   },
 
@@ -51,6 +66,15 @@ export const theme = createTheme({
           },
         },
       },
+    },
+
+    MuiButton: {
+      variants: [
+        {
+          props: { variant: 'contained', color: 'primary' },
+          style: { color: 'white' },
+        },
+      ],
     },
   },
 });
