@@ -1,11 +1,11 @@
-import avatar from '@/images/hero-avatar.jpg';
+import avatar from '@/images/avatar.png';
 import { Button, Container, Stack, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import Image from 'next/image';
 
 export function HeroSection() {
   return (
-    <Box component="section" pt={{ xs: 4, md: 16 }}>
+    <Box component="section" pt={{ xs: 4, md: 16 }} pb={{ xs: 7, md: 9 }}>
       <Container>
         <Stack
           spacing={{ xs: 4, md: 14 }}
@@ -28,7 +28,14 @@ export function HeroSection() {
             </Button>
           </Box>
 
-          <Box color="secondary.light" borderRadius="50%">
+          <Box
+            sx={{
+              minWidth: '240px',
+              boxShadow: '-5px 13px',
+              color: 'secondary.light',
+              borderRadius: '50%',
+            }}
+          >
             <Image src={avatar} alt="avatar" layout="responsive" />
           </Box>
         </Stack>
